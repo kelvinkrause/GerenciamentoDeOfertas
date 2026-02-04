@@ -12,8 +12,7 @@ namespace GerenciamentoDeOfertas.Application.UseCase.Oferta
             {
                 Nome = request.Nome,
                 Descricao = request.Descricao,
-                Preco = request.Preco,
-                DataRegistro = request.DataRegistro
+                Preco = request.Preco
             };
 
             return response;

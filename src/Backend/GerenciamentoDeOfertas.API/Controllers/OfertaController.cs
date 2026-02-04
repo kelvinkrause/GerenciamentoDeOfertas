@@ -1,4 +1,5 @@
-﻿using GerenciamentoDeOfertas.Communication.Requests;
+﻿using GerenciamentoDeOfertas.Application.Interfaces;
+using GerenciamentoDeOfertas.Communication.Requests;
 using GerenciamentoDeOfertas.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,15 +25,10 @@ namespace GerenciamentoDeOfertas.API.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegistradoOfertaJson), StatusCodes.Status201Created)]
         public IActionResult RegistrarOfertaAsync(
-            [FromBody] RequestRegistrarOfertaJson request)
+            [FromBody] RequestRegistrarOfertaJson request,
+            [FromServices] IRegistrarOfertaUseCase service)
         {
-            var response = new ResponseRegistradoOfertaJson
-            {
-                Nome = request.Nome,
-                Descricao = request.Descricao,
-                Preco = request.Preco,
-                DataRegistro = request.DataRegistro
-            };
+            var response = service.Execute(request);
 
             return Created(string.Empty, response);
         }
