@@ -1,5 +1,5 @@
 ﻿using GerenciamentoDeOfertas.Application.Interfaces;
-using GerenciamentoDeOfertas.Application.UseCase.Oferta;
+using GerenciamentoDeOfertas.Application.UseCase.Oferta.Registrar;
 using GerenciamentoDeOfertas.Application.Validator;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation;

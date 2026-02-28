@@ -3,7 +3,7 @@ using GerenciamentoDeOfertas.Application.Interfaces;
 using GerenciamentoDeOfertas.Communication.Requests;
 using GerenciamentoDeOfertas.Communication.Responses;
 
-namespace GerenciamentoDeOfertas.Application.UseCase.Oferta
+namespace GerenciamentoDeOfertas.Application.UseCase.Oferta.Registrar
 {
     public class RegistrarOfertaUseCase : IRegistrarOfertaUseCase
     {
@@ -22,7 +22,7 @@ namespace GerenciamentoDeOfertas.Application.UseCase.Oferta
             {
                 Nome = request.Nome,
                 Descricao = request.Descricao,
-                Preco = request.Preco
+                Valor = request.Valor
             };
 
             return response;
