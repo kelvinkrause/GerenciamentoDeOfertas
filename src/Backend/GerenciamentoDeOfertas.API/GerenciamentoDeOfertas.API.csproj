@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Shared\GerenciamentoDeOfertas.Communication\GerenciamentoDeOfertas.Communication.csproj" />
+    <ProjectReference Include="..\GerenciamentoDeOfertas.Application\GerenciamentoDeOfertas.Application.csproj" />
   </ItemGroup>
 
 </Project>
