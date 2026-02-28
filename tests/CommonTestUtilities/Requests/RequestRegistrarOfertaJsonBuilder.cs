@@ -10,7 +10,7 @@ namespace CommonTestUtilities.Requests
             {
                 Nome = "Oferta Teste",
                 Descricao = "Descrição da oferta teste",
-                Preco = 100.00m
+                Valor = 100.00m
             };
         }
     }
