@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\GerenciamentoDeOfertas.Communication\GerenciamentoDeOfertas.Communication.csproj" />
+    <ProjectReference Include="..\..\Shared\GerenciamentoDeOfertas.Exceptions\GerenciamentoDeOfertas.Exceptions.csproj" />
     <ProjectReference Include="..\GerenciamentoDeOfertas.Domain\GerenciamentoDeOfertas.Domain.csproj" />
   </ItemGroup>
 
