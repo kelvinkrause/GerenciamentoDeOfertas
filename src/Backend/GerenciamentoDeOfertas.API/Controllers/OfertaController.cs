@@ -21,7 +21,6 @@ namespace GerenciamentoDeOfertas.API.Controllers
             return Ok($"Buscando todas ofertas.");
         }
 
-
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegistradoOfertaJson), StatusCodes.Status201Created)]
         public IActionResult RegistrarOfertaAsync(
