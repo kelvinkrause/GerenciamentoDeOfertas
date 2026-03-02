@@ -23,11 +23,11 @@ namespace GerenciamentoDeOfertas.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(ResponseRegistradoOfertaJson), StatusCodes.Status201Created)]
-        public IActionResult RegistrarOfertaAsync(
+        public async Task<IActionResult> RegistrarOfertaAsync(
             [FromBody] RequestRegistrarOfertaJson request,
             [FromServices] IRegistrarOfertaUseCase service)
         {
-            var response = service.Execute(request);
+            var response = await service.Execute(request);
 
             return Created(string.Empty, response);
         }

@@ -5,6 +5,6 @@ namespace GerenciamentoDeOfertas.Application.Interfaces
 {
     public interface IRegistrarOfertaUseCase
     {
-        ResponseRegistradoOfertaJson Execute(RequestRegistrarOfertaJson request);
+        Task<ResponseRegistradoOfertaJson> Execute(RequestRegistrarOfertaJson request);
     }
 }
