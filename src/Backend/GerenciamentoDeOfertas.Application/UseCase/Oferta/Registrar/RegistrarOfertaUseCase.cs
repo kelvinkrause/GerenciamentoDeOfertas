@@ -6,7 +6,6 @@ using GerenciamentoDeOfertas.Communication.Responses;
 using GerenciamentoDeOfertas.Domain.Repositories;
 using GerenciamentoDeOfertas.Domain.Repositories.Oferta;
 using GerenciamentoDeOfertas.Exceptions.Exceptions;
-using System.Threading.Tasks;
 
 namespace GerenciamentoDeOfertas.Application.UseCase.Oferta.Registrar
 {
