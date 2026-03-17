@@ -1,9 +1,11 @@
-﻿using GerenciamentoDeOfertas.Application.Interfaces;
+﻿using AutoMapper;
+using FluentValidation;
+using GerenciamentoDeOfertas.Application.Interfaces;
+using GerenciamentoDeOfertas.Application.Services.AutoMapper;
 using GerenciamentoDeOfertas.Application.UseCase.Oferta.Registrar;
 using GerenciamentoDeOfertas.Application.Validator;
 using Microsoft.Extensions.DependencyInjection;
-using GerenciamentoDeOfertas.Application.Services.AutoMapper;
-using FluentValidation;
+using System.Reflection;
 
 namespace GerenciamentoDeOfertas.Application
 {
@@ -21,17 +23,23 @@ namespace GerenciamentoDeOfertas.Application
             services.AddScoped<IRegistrarOfertaUseCase, RegistrarOfertaUseCase>();
         }
 
-        private static void AddValidators(IServiceCollection services)
+        private static void AddValidators(this IServiceCollection services)
         {
             services.AddValidatorsFromAssemblyContaining<RegistrarOfertaValidator>();
         }
 
-        private static void AddAutoMapper(IServiceCollection services)
+        private static void AddAutoMapper(this IServiceCollection services)
         {
-            services.AddScoped(option => new AutoMapper.MapperConfiguration(cfg =>
+            //services.AddScoped(option => new MapperConfiguration(cfg =>
+            //{
+            //    cfg.AddProfile(new AutoMapping());
+            //}).CreateMapper());
+
+            // Versão AutoMapper: 16.1.1. 
+            services.AddAutoMapper(cfg =>
             {
                 cfg.AddProfile(new AutoMapping());
-            }).CreateMapper());
+            });
         }
     }
 }

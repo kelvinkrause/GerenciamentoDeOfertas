@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GerenciamentoDeOfertas.Application.Services.AutoMapper;
+using Microsoft.Extensions.Logging;
 
 namespace CommonTestUtilities.Mapper
 {
@@ -7,10 +8,13 @@ namespace CommonTestUtilities.Mapper
     {
         public static IMapper Build()
         {
-            return new MapperConfiguration(options =>
+            var loggerFactory = LoggerFactory.Create(builder => { });
+
+            var configuration = new MapperConfiguration(options =>
             {
                 options.AddProfile(new AutoMapping());
-            }).CreateMapper();
-        }
+            }, loggerFactory);
+
+            return configuration.CreateMapper();}
     }
 }

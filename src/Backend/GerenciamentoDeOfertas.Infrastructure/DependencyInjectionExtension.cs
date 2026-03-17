@@ -1,6 +1,7 @@
 ﻿using GerenciamentoDeOfertas.Domain.Repositories;
 using GerenciamentoDeOfertas.Domain.Repositories.Oferta;
 using GerenciamentoDeOfertas.Infrastructure.DataAccess;
+using GerenciamentoDeOfertas.Infrastructure.Extension;
 using GerenciamentoDeOfertas.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,8 +15,12 @@ namespace GerenciamentoDeOfertas.Infrastructure
             this IServiceCollection services,
             IConfiguration configuration)
         {
-            AddGerenciamentoDeOfertasDbContext(services, configuration);
             AddRepositories(services);
+            
+            if (configuration.AmbienteDeTesteUnitario())
+                return;
+
+            AddGerenciamentoDeOfertasDbContext(services, configuration);
         }
 
         private static void AddRepositories(IServiceCollection services)
